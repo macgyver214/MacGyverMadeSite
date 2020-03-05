@@ -8,6 +8,7 @@ import { KeyboardsComponent } from './keyboards/keyboards.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { HomeComponent } from './home/home.component';
 import { SiteFooterComponent } from './site-footer/site-footer.component';
+import { BlogComponent } from './blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SiteFooterComponent } from './site-footer/site-footer.component';
     KeyboardsComponent,
     AboutMeComponent,
     HomeComponent,
-    SiteFooterComponent
+    SiteFooterComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
