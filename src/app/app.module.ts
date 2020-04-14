@@ -12,7 +12,7 @@ import { BlogComponent } from './blog/blog.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 // Icons to import to the library
-import { faYoutube, faTwitter, faTwitch, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { faYoutube, faTwitter, faTwitch, faDiscord, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { } from '@fortawesome/free-regular-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
@@ -36,6 +36,6 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 })
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    library.addIcons(faYoutube, faTwitter, faTwitch, faDiscord, faEnvelope);
+    library.addIcons(faYoutube, faTwitter, faTwitch, faDiscord, faLinkedin, faEnvelope);
   }
  }
