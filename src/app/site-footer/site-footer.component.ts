@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FaConfig } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-site-footer',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiteFooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(faConfig: FaConfig) {
+    faConfig.defaultPrefix = 'fab';
+  }
 
   ngOnInit() {
   }

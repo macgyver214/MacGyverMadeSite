@@ -9,7 +9,12 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { HomeComponent } from './home/home.component';
 import { SiteFooterComponent } from './site-footer/site-footer.component';
 import { BlogComponent } from './blog/blog.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+
+// Icons to import to the library
+import { faYoutube, faTwitter, faTwitch, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { } from '@fortawesome/free-regular-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 @NgModule({
   declarations: [
@@ -29,4 +34,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIcons(faYoutube, faTwitter, faTwitch, faDiscord, faEnvelope);
+  }
+ }
