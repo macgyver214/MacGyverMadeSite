@@ -5,6 +5,12 @@
   display: flex;
 }
 
+div.homePage {
+  --header-height: 77px;
+  margin-bottom: calc(-1 * var(--header-height));
+  z-index: 5;
+}
+
 .nav-banner div {
   padding: 20px;
   display: inline-flex;
@@ -31,4 +37,8 @@ a {
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
+}
+
+a.homePage {
+  color: white;
 }

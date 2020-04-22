@@ -1,19 +1,19 @@
-<div class='nav-banner'>
+<div class='nav-banner' [class.homePage]='isAtHome' [@toggleBackground]='isAtTop'>
   <div class='left'>
     <nav>
-      <a routerLink='/home'>Home</a>
-      <a routerLink='/keyboards'>Keyboards</a>
+      <a routerLink='/home' [class.homePage]='isAtHome' [@toggleTextColor]='isAtTop'>Home</a>
+      <a routerLink='/keyboards' [class.homePage]='isAtHome' [@toggleTextColor]='isAtTop'>Keyboards</a>
     </nav>
   </div>
   <div class='title'>
     <nav>
-      <a routerLink='/home'>MacGyver Made</a>
+      <a routerLink='/home' [class.homePage]='isAtHome' [@toggleTextColor]='isAtTop'>MacGyver Made</a>
     </nav>
   </div>
   <div class='right'>
     <nav>
-      <a routerLink='/about'>About</a>
-      <a routerLink='/blog'>Blogs</a>
+      <a routerLink='/about' [class.homePage]='isAtHome' [@toggleTextColor]='isAtTop'>About</a>
+      <a routerLink='/blog' [class.homePage]='isAtHome' [@toggleTextColor]='isAtTop'>Blogs</a>
     </nav>
   </div>
 </div>
