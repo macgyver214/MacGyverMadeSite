@@ -46,14 +46,11 @@ enum PositionState {
 export class NavBannerComponent implements OnInit {
 
   public isAtTop = true;
-  public isAtHome;
+  public isAtHome = true;
+  private router;
 
   constructor(router: Router) {
-    router.events
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe((event: NavigationEnd) => {
-        this.isAtHome = event.url === '/home';
-      });
+    this.router = router;
    }
 
   ngOnInit() {
@@ -65,6 +62,13 @@ export class NavBannerComponent implements OnInit {
     );
 
     scroll$.subscribe(res => this.isAtTop = res);
+
+    this.router.events
+    .pipe(filter(event => event instanceof NavigationEnd))
+    .subscribe((event: NavigationEnd) => {
+      console.log(event.url);
+      this.isAtHome = (event.url === '/home') || (event.url === '/index.html') || (event.url === '/');
+    });
   }
 
 }
