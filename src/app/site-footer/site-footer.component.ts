@@ -8,6 +8,7 @@ import { FaConfig } from '@fortawesome/angular-fontawesome';
 })
 export class SiteFooterComponent implements OnInit {
 
+  // set the default prefix for fontawesome icons, since only one that was imported is from a different prefix
   constructor(faConfig: FaConfig) {
     faConfig.defaultPrefix = 'fab';
   }

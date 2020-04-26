@@ -28,15 +28,20 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
     BlogComponent
   ],
   imports: [
+    // angular
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+
+    // third party icons
     FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+
+  // initialize an icon library with the icons desired during construction
   constructor(library: FaIconLibrary) {
     library.addIcons(faYoutube, faTwitter, faTwitch, faDiscord, faLinkedin, faEnvelope);
   }

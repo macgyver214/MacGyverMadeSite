@@ -4,16 +4,12 @@ import { throttleTime, map, distinctUntilChanged, filter } from 'rxjs/operators'
 import { trigger, state, style, animate, transition, group, query, animateChild } from '@angular/animations';
 import { Router, NavigationEnd } from '@angular/router';
 
-enum PositionState {
-    AtTop = 'transparent',
-    NotAtTop = 'opaque'
-}
-
 @Component({
   selector: 'app-nav-banner',
   templateUrl: './nav-banner.component.html',
   styleUrls: ['./nav-banner.component.less'],
   animations: [
+    // animate background from transparent to white when not at the top of page
     trigger('toggleBackground', [
       state(
         'true',
@@ -24,12 +20,14 @@ enum PositionState {
         style({ 'background-color': 'white' })
       ),
       transition('* => *', [
+        // trigger the next animation after this one
         group([
           query('@toggleTextColor', animateChild()),
           animate('200ms ease-in')
         ]),
       ]),
     ]),
+    // animate the text color from white to black
     trigger('toggleTextColor', [
       state(
         'true',
@@ -54,6 +52,8 @@ export class NavBannerComponent implements OnInit {
    }
 
   ngOnInit() {
+
+    // listen to window scroll events for when the app is no longer at the top of the page
     const scroll$ = fromEvent(window, 'scroll').pipe(
       throttleTime(10),
       map(() => window.pageYOffset),
@@ -63,6 +63,7 @@ export class NavBannerComponent implements OnInit {
 
     scroll$.subscribe(res => this.isAtTop = res);
 
+    // listen for router navigation events for when the app lands on the homepage
     this.router.events
     .pipe(filter(event => event instanceof NavigationEnd))
     .subscribe((event: NavigationEnd) => {

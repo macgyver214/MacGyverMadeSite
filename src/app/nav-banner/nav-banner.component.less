@@ -5,12 +5,6 @@
   display: flex;
 }
 
-div.homePage {
-  --header-height: 77px;
-  margin-bottom: calc(-1 * var(--header-height));
-  z-index: 5;
-}
-
 .nav-banner div {
   padding: 20px;
   display: inline-flex;
@@ -22,6 +16,8 @@ div.homePage {
   font-family: fantasy;
   font-size: 18pt;
 }
+
+/* align left to the right, align right to the left */
 
 .left {
   margin-right: auto;
@@ -37,6 +33,20 @@ a {
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
+}
+
+/*
+
+  Describe the navbar components when on the homepage.
+
+  header renders at 77px, so move the bottom margin up by that amount in order
+  to lay the navbar over the homepage image content when it's on the homepage
+
+*/
+div.homePage {
+  --header-height: 77px;
+  margin-bottom: calc(-1 * var(--header-height));
+  z-index: 5;
 }
 
 a.homePage {
