@@ -5,11 +5,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBannerComponent } from './nav-banner/nav-banner.component';
-import { KeyboardsComponent } from './keyboards/keyboards.component';
-import { AboutMeComponent } from './about-me/about-me.component';
-import { HomeComponent } from './home/home.component';
+import { KeyboardsComponent } from './pages/keyboards/keyboards.component';
+import { AboutMeComponent } from './pages/about-me/about-me.component';
+import { HomeComponent } from './pages/home/home.component';
 import { SiteFooterComponent } from './site-footer/site-footer.component';
-import { BlogComponent } from './blog/blog.component';
+import { BlogComponent } from './pages/blog/blog.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 // Icons to import to the library
